@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TorqueTrend - The Automotive Industry Blog</title>
+    <meta name="description" content="TorqueTrend is made by car enthusiasts, featuring the latest car reviews, rankings, and news.">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+
+    <!-- Icons (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-eNknK4d+I+zXEQ56K9VBNzBhzQma05G25ZHgCqpOq9ZKmwONaDG2wRnKvD1AnG8A" crossorigin="anonymous" />
+
+    <!-- Scripts -->
+    <script src="scripts.js" defer></script>
+    <!-- Particles.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+
+<body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Header Section -->
+    <header class="header-futuristic">
+        <div class="header-content">
+            <div class="logo">
+                <h1>TorqueTrend</h1>
+            </div>
+
+            <!-- Hamburger Menu Icon for mobile -->
+            <div class="hamburger-menu" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Primary navigation for desktop -->
+            <nav class="nav-container">
+                <ul class="nav-buttons" id="nav-menu" aria-label="Primary Navigation">
+                    <li><button onclick="scrollToSection('home')">Home</button></li>
+                    <li><button onclick="scrollToSection('blog')">Blog</button></li>
+                    <li><button onclick="scrollToSection('rankings')">Rankings</button></li>
+                    <li><button onclick="scrollToSection('reviews')">Reviews</button></li>
+                </ul>
+            </nav>
+
+            <!-- Search bar for desktop -->
+            <div class="search-bar">
+                <input type="text" id="search-bar" placeholder="Search..." aria-label="Search">
+                <button onclick="debouncedSearch()">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar for mobile -->
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <div class="sidebar-logo">
+                <h1>TorqueTrend</h1>
+            </div>
+
+            <!-- Sidebar navigation for mobile -->
+            <nav class="mobile-nav">
+                <ul aria-label="Mobile Navigation">
+                    <li><button onclick="scrollToSection('home')">Home</button></li>
+                    <li><button onclick="scrollToSection('blog')">Blog</button></li>
+                    <li><button onclick="scrollToSection('rankings')">Rankings</button></li>
+                    <li><button onclick="scrollToSection('reviews')">Reviews</button></li>
+                </ul>
+            </nav>
+
+            <!-- Search bar inside the sidebar for mobile -->
+            <div class="sidebar-search">
+                <input type="text" id="sidebar-search-bar" placeholder="Search..." aria-label="Mobile Search">
+                <button onclick="debouncedSearch()">Search</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Overlay for the sidebar (mobile) -->
+    <div id="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to the Auto Industry Blog</h1>
+            <p>Your area for the latest car reviews, rankings, and industry news.</p>
+            <a href="#blog" class="hero-button" aria-label="Explore Articles">Explore Our Articles</a>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="content-section">
+        <h2>Latest Blog Posts</h2>
+        <div class="content-grid">
+            <!-- Article 1 -->
+            <article class="content-box">
+                <h3>The Future of Electric Vehicles</h3>
+                <p>Tesla's dominance in the EV market and its impact on the automotive industry.</p>
+                <a href="#" class="btn-inside" aria-label="Read More about the EV Industry">Read More</a>
+            </article>
+            <!-- Article 2 -->
+            <article class="content-box">
+                <h3>Top 10 Car Maintenance Tips</h3>
+                <p>Learn key maintenance tips from professionals to keep your car running great for years to come.</p>
+                <a href="#" class="btn-inside" aria-label="Learn More about Car Maintenance">Learn More</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Rankings Section -->
+    <section id="rankings" class="content-section">
+        <h2>Top Vehicle Rankings</h2>
+        <div class="content-grid">
+            <!-- Rankings 1 -->
+            <div class="content-box">
+                <h3>Best SUVs of 2024</h3>
+                <ul class="no-bullets">
+                    <li><strong>1. Tesla Model X</strong></li>
+                    <li>2. Alfa Romeo Stelvio</li>
+                    <li>3. Ford Bronco Raptor</li>
+                </ul>
+                <a href="#" class="btn-inside" aria-label="View Full List of Best SUVs">View Full List</a>
+            </div>
+            <!-- Rankings 2 -->
+            <div class="content-box">
+                <h3>Best Sedans of 2024</h3>
+                <ul class="no-bullets">
+                    <li><strong>1. Alfa Romeo Giulia</strong></li>
+                    <li>2. Tesla Model 3</li>
+                    <li>3. BMW 3 Series</li>
+                </ul>
+                <a href="#" class="btn-inside" aria-label="View Full List of Best Sedans">View Full List</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="content-section">
+        <h2>Recent Car Reviews</h2>
+        <div class="content-grid">
+            <!-- Review 1 -->
+            <article class="content-box">
+                <h3>2024 Ford Mustang Review</h3>
+                <p>Experience the thrilling drive of the 2024 Ford Mustang with modern tech and muscle.</p>
+                <a href="#" class="btn-inside" aria-label="Read Ford Mustang Review">Read Review</a>
+            </article>
+            <!-- Review 2 -->
+            <article class="content-box">
+                <h3>2024 Tesla Model 3 Performance</h3>
+                <p>The 2024 Tesla Model 3 Performance delivers stunning acceleration and top-notch safety features.</p>
+                <a href="#" class="btn-inside" aria-label="Read Tesla Model 3 Performance Review">Read Review</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-futuristic">
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h4>About Us</h4>
+                <p>Your trusted source for automotive news, reviews, and rankings. Stay updated with the latest trends.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#home" aria-label="Go to Home">Home</a></li>
+                    <li><a href="#blog" aria-label="Go to Blog">Blog</a></li>
+                    <li><a href="#rankings" aria-label="Go to Rankings">Rankings</a></li>
+                    <li><a href="#reviews" aria-label="Go to Reviews">Reviews</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="#" aria-label="Connect on Facebook"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="#" aria-label="Connect on Twitter"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="#" aria-label="Connect on Instagram"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#" aria-label="Connect on LinkedIn"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2045 TorqueTrend. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Placeholder for search results -->
+    <div id="search-results"></div>
+
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+</body>
+
+</html>
